@@ -68,7 +68,7 @@ class BabyDragon
 			when 1, 2, 3, 4
 			puts text.colorize(:light_red)
 			when 0
-			puts text.colorize(:red)
+			puts text.colorize(:magenta)
 		end
 	end
 end
