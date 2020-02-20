@@ -10,20 +10,20 @@ class BabyDragon
 		# The dragon is starving when @fullness_level is 0
 		@fullness_level = 10
 
-		pretty_put("#{@name} is born!")
-		puts File.read('born.txt')
+		puts "#{@name} is born!"
+		pretty_put(File.read('born.txt'))
 	end
 
 	def play
-		pretty_put("\n\n#{@name} chills out next to the fireplace and plays with some Legos.")
-		puts File.read('play.txt')
+		puts "\n\n#{@name} chills out next to the fireplace and plays with some Legos."
+		pretty_put(File.read('play.txt'))
 
 		passage_of_time
 	end
 
 	def take_a_nap
-		pretty_put("\n\n#{@name} curls up and dozes off...")
-		puts File.read('sleep.txt')
+		puts "\n\n#{@name} curls up and dozes off..."
+		pretty_put(File.read('sleep.txt'))
 
 		@is_asleep = true
 
@@ -35,8 +35,8 @@ class BabyDragon
 	end
 
 	def eat
-		pretty_put("\n\n#{@name} eats popcorn, cheez-its, seaweed, cheetos, burritos")
-		puts File.read('eat.txt')
+		puts "\n\n#{@name} eats popcorn, cheez-its, seaweed, cheetos, burritos"
+		pretty_put(File.read('eat.txt'))
 
 		@fullness_level += 1
 		
@@ -49,9 +49,10 @@ class BabyDragon
 		else
 			if @is_asleep
 				@is_asleep = false
-				pretty_put("#{@name} woke up!")
+				puts "#{@name} woke up!"
 			end
-			pretty_put("#{@name} was super hangry! They ATE YOU! >:(")
+			puts "#{@name} was super hangry! They ATE YOU! >:("
+			pretty_put(File.read('hangry.txt'))
 			exit
 		end
 	end
